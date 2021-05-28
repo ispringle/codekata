@@ -40,11 +40,11 @@ def main():
         day = sys.argv[2]
     if challenge in module_dict:
         import importlib
-        solution_mod = importlib.import_module(module_dict[day])
+        solution_mod = importlib.import_module(module_dict[challenge])
     else:
         print("Please ensure a solution module exists for this day.")
         sys.exit()
-    solution_mod.select(day).solve()
+    print(solution_mod.select(day)().solve(1, [1, 3, 5]))
 
 
 if __name__ == "__main__":
