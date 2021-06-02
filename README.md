@@ -1,6 +1,6 @@
 # codekata
 
-[CodeKata](http://codekata.com/) is a blog with a serious of Katas for
+[CodeKata](http://codekata.com/) is a blog with a series of Katas for
 programmers. Each post, with the exception of the post offers a problem to
 solve in the language of the developer's choice. The challenge is to spend
 approximate 30 minutes a day on the challenge. Each Kata is to be solved five
