@@ -44,7 +44,7 @@ def main():
     else:
         print("Please ensure a solution module exists for this day.")
         sys.exit()
-    print(solution_mod.select(day)().solve(1, [1, 3, 5]))
+    print(solution_mod.select(day)().solve(5, [1, 3, 5]))
 
 
 if __name__ == "__main__":

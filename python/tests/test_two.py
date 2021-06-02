@@ -2,7 +2,7 @@ from codekata import two
 
 
 class ChallengeTwoTest:
-    mod = None
+    mod = two.Day()
 
     def test_one(self):
         assert -1 == self.mod.solve(3, [])
@@ -70,3 +70,6 @@ class ChallengeTwoTest:
 
 class TestDayOne(ChallengeTwoTest):
     mod = two.One()
+
+class TestDayTwo(ChallengeTwoTest):
+    mod = two.Two()

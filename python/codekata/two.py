@@ -2,15 +2,18 @@ class Day:
     def __init__(self):
         pass
 
+    def solve(self, t, a):
+        pass
+
 
 class One:
-    def solve(self, target, sorted_array):
-        s, m, e = 0, 0, len(sorted_array)
+    def solve(self, t, a):
+        s, m, e = 0, 0, len(a)
         while s != e:
             m = (e + s) // 2
-            if sorted_array[m] == target:
+            if a[m] == t:
                 return m
-            elif sorted_array[m] > target:
+            elif a[m] > t:
                 e = m
             else:
                 s = m + 1
@@ -18,7 +21,16 @@ class One:
 
 
 class Two(Day):
-    pass
+    def solve(self, t, a, s=0, e=-1):
+        if e == -1: e = len(a) - 1
+        if e <= s: return e if a and a[e] == t else -1
+        m = (s + e) // 2
+        if a[m] > t:
+            return self.solve(t, a, s, m - 1)
+        elif a[m] < t:
+            return self.solve(t, a, m + 1, e)
+        else:
+            return m
 
 
 class Three(Day):
