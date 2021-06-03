@@ -73,3 +73,9 @@ class TestDayOne(ChallengeTwoTest):
 
 class TestDayTwo(ChallengeTwoTest):
     mod = two.Two()
+
+class TestDayThree(ChallengeTwoTest):
+    mod = two.Three()
+
+class TestDayFour(ChallengeTwoTest):
+    mod = two.Four()

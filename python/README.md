@@ -32,3 +32,25 @@ finding this bug was by walking through the chop in my head -- luckily this
 function is basic enough that I could do this without trouble! Ended up
 being that if `e` was equal to `0` then the `if not e` would kick in, and that
 somehow short-circuited the following catch to return if `e == 0`.
+
+### Day Three
+
+I initially stumbled upon this idea yesterday but didn't have the mental power
+to get it working -- I was also fixated on a recursive answer then... Decided
+to give this a shot today, and boy this one proved to be easy to get _almost_
+there and then a slog to get that last 1%. In fact, if not for my last test
+with a huge, random list I would have never detected this problem because
+it only snuck up on me over time. Basically an off-by-one over numberous
+iterations. I solved that issue, which was due to `len(a) // 2` not always
+being equal to `len(a) - (len(a) // 2)` (also it's needless work to do that,
+and then had another issue when `len(a) // 2` has to floor the quotient to
+return an `int`. Tracked that down, but I over did it, resulting in an
+off-by-one for a whole other reason. But... problem solved!
+
+### Day Four
+
+Sorta cheated, it's day one, just oop-y. Created a SortedArray class and then
+some methods to find the target. Used the computed attribute via the
+`__getattr__` method for some added coolness and to make it more interesting,
+but other than that, it's day one's... no errors or issues, worked on the my
+first run of the tests.

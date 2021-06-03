@@ -3,7 +3,7 @@ class Day:
         pass
 
     def solve(self, t, a):
-        pass
+        return a.index(t)
 
 
 class One:
@@ -34,11 +34,61 @@ class Two(Day):
 
 
 class Three(Day):
-    pass
+    def solve(self, t, a):
+        def mid(a):
+           return len(a) // 2
 
+        def s(t, a, meta_m):
+            m = meta_m
+            while a:
+                print(a, m, meta_m)
+                if a[m] == t:
+                    return meta_m
+                elif m == 0:
+                    return -1
+                if a[m] > t:
+                    a = a[:m]
+                    x = mid(a)
+                    meta_m -= m - x
+                    m = x
+                else:
+                    a = a[m:]
+                    m = mid(a)
+                    meta_m += m
+            return -1
+        m = mid(a)
+        return s(t, a, m)
+
+
+class SortedArray:
+    def __init__(self, a_list):
+        self.array = sorted(a_list)
+
+    def __getattr__(self, attr):
+        if attr == 'length':
+            return len(self.array)
+        elif attr == 'mid':
+            return len(self.array) // 2
+
+    def get(self, index):
+        return self.array[index]
+
+    def find(self, target):
+        s, m, e = 0, self.mid, self.length
+        while s != e:
+            m = (e + s) // 2
+            if self.get(m) == target:
+                return m
+            elif self.get(m) > target:
+                e = m
+            else:
+                s = m + 1
+        return -1
 
 class Four(Day):
-    pass
+    def solve(self, t, a):
+        array = SortedArray(a)
+        return array.find(t)
 
 
 class Five(Day):
