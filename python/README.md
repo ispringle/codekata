@@ -54,3 +54,18 @@ some methods to find the target. Used the computed attribute via the
 `__getattr__` method for some added coolness and to make it more interesting,
 but other than that, it's day one's... no errors or issues, worked on the my
 first run of the tests.
+
+### Day Five
+
+I promise I wasn't stumped. I've had a hectic last few weeks of life. Had an
+initial product deployment at work, followed by a marathon sprint to get in
+some missing features before anyone notices. Plus, living on a farm means that
+everyday is a busy day. And on top of that I've been interviewing for four or
+five different positions. But onto day five...
+
+Today's solution uses the std library. I think that is a valid solution, given
+that it's a) there and b) probably a better tool for the job than to write one
+yourself, at least IRL. Had to do a little logic to return the right value, as
+the `biset.biset_left()` method returns the index value to _insert_ `t` and
+not the location of `t` or `-1` if `t` is not in the array. Short, sweet,
+correct.

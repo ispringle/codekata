@@ -36,7 +36,7 @@ class Two(Day):
 class Three(Day):
     def solve(self, t, a):
         def mid(a):
-           return len(a) // 2
+            return len(a) // 2
 
         def s(t, a, meta_m):
             m = meta_m
@@ -56,6 +56,7 @@ class Three(Day):
                     m = mid(a)
                     meta_m += m
             return -1
+
         m = mid(a)
         return s(t, a, m)
 
@@ -85,6 +86,7 @@ class SortedArray:
                 s = m + 1
         return -1
 
+
 class Four(Day):
     def solve(self, t, a):
         array = SortedArray(a)
@@ -92,7 +94,13 @@ class Four(Day):
 
 
 class Five(Day):
-    pass
+    def solve(self, t, a):
+        import bisect
+        x = bisect.bisect_left(a, t)
+        try:
+            return x if a[x] == t else -1
+        except (IndexError):
+            return -1
 
 
 days = {
