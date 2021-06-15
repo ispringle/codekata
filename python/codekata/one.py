@@ -3,7 +3,7 @@ class Day:
         pass
 
     def solve(self):
-        print("This should solve the problem!")
+        return "This should solve the problem!"
 
 
 class One(Day):
@@ -36,4 +36,4 @@ days = {
 
 
 def select(day):
-    return days[day]()
+    return days[day]

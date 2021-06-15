@@ -69,3 +69,41 @@ yourself, at least IRL. Had to do a little logic to return the right value, as
 the `biset.biset_left()` method returns the index value to _insert_ `t` and
 not the location of `t` or `-1` if `t` is not in the array. Short, sweet,
 correct.
+
+## Challenge Three
+
+Challenge three is not an actual "coding" code kata, instead it is a mental
+exercise. I might eventually do a write-up of my thoughts on that challenge.
+
+## Challenge Four
+
+This was fun, and really gotta do it part by part.
+
+> To what extent did the design decisions you made when writing the original
+  programs make it easier or harder to factor out common code?
+
+I noticed the patter right away, so factoring out common code was simple a
+matter of abstracting the few differences between the three core operations
+(transform data, collect pairs, get min).
+
+> Was the way you wrote the second program influenced by writing the first?
+
+Yes, definitely it was. I was able to really just copy/paste the first
+solution and change the relevant indices, plus add/remove conditions when
+needed.
+
+> Is factoring out as much common code as possible always a good thing? Did
+  the readability of the programs suffer because of this requirement? How about
+  the maintainability?
+
+No, I don't think factoring is always good or needed. If I have some trivial,
+non-complex oneliner, it'd be silly to refactor that into something else. At
+the very least my n oneliners are now n+2 lines. Sure it's homogeneous, but
+readability decreases and as soon as that new function gets used for something
+ever so slightly different the knee-jerk reaction is going to be to adding to
+that function, increasing complexity and reducing readability.
+
+In this case, I do not believe _my_ refactoring effort in any way reduced the
+quality or readability of the program. I will admit that the `cond` optional
+parameters are not the best way to handle it and there are a few arguments to
+be passed, but nonetheless, I stand by my solution! :D

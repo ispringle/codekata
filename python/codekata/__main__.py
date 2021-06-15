@@ -45,12 +45,15 @@ def main():
     else:
         print("Please ensure a solution module exists for this day.")
         sys.exit()
+    """
     print(solution_mod.select(day)().solve(5, [1, 3, 5]))
     print(solution_mod.select(day)().solve(3, [1]))
     print(solution_mod.select(day)().solve(3, []))
     n = random.randint(10, 100)
     t = random.randint(0, n)
     print(t - 1, solution_mod.select(day)().solve(t, list(range(1, n + 1))))
+    """
+    print(solution_mod.select(day)().solve())
 
 
 if __name__ == "__main__":
